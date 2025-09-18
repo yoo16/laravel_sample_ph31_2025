@@ -10,6 +10,11 @@ Route::get('/', function () {
 
 // /about でアクセスしたときのルーティング
 Route::get('/about', function () {
-    // return view('welcome');
     return '<h1>This is the about page.</h1>';
+});
+
+// /item/{id} でアクセスしたときのルーティング
+Route::get('/item/{id}', function (int $id) {
+    $message = "Item id is {$id}";
+    return $message;
 });
