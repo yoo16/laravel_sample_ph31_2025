@@ -11,5 +11,5 @@ Route::get('/', function () {
 // /about でアクセスしたときのルーティング
 Route::get('/about', function () {
     // return view('welcome');
-    return 'This is the about page.';
+    return '<h1>This is the about page.</h1>';
 });
