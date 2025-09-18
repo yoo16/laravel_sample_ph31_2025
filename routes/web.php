@@ -8,6 +8,7 @@ Route::get('/', function () {
     return 'Hello, World!';
 });
 
+// /about でアクセスしたときのルーティング
 Route::get('/about', function () {
     // return view('welcome');
     return 'This is the about page.';
