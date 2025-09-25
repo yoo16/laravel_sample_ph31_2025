@@ -36,5 +36,5 @@ Route::get('/search', function (Request $request) {
     // dd($request->all());
     // $keyword = $request->input('keyword', 'No keyword');
     $keyword = $request->keyword ?? 'No keyword';
-    return $keyword;
+    return view('search');
 });
