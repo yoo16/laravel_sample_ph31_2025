@@ -20,7 +20,13 @@ Route::get('/about', function () {
 Route::get('/item/{id}', function (int $id) {
     $message = "Item id is {$id}";
     // resources/views/item/show.blade.php を表示する
-    return view('item.show');
+    // データ作成
+    $data = [
+        'message' => $message,
+        'id' => $id
+    ];
+    // ビューにデータを渡す
+    return view('item.show', $data);
 });
 
 // /search でアクセスしたときのルーティング
