@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 // GETリクエストで、トップページにアクセスしたときのルーティング
 Route::get('/', function () {
+    // resources/views/home/index.blade.php を表示する
     return view('home.index');
 });
 
