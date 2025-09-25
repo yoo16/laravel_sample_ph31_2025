@@ -36,5 +36,9 @@ Route::get('/search', function (Request $request) {
     // dd($request->all());
     // $keyword = $request->input('keyword', 'No keyword');
     $keyword = $request->keyword ?? 'No keyword';
-    return view('search');
+    $date = [
+        'keyword' => $keyword,
+        'result' => '何も見つかりませんでした',
+    ];
+    return view('search', $date);
 });
