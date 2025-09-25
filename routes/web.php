@@ -40,5 +40,7 @@ Route::get('/search', function (Request $request) {
         'keyword' => $keyword,
         'result' => '何も見つかりませんでした',
     ];
+    // http://127.0.0.1:8000/search?keyword=xxx
+    // にアクセスすると keyword に応じたデータが表示される
     return view('search', $date);
 });
