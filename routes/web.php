@@ -18,3 +18,9 @@ Route::get('/item/{id}', function (int $id) {
     $message = "Item id is {$id}";
     return $message;
 });
+
+// /search でアクセスしたときのルーティング
+Route::get('/search', function () {
+    $keyword = $_GET['keyword'] ? : 'No keyword';
+    return $keyword;
+});
