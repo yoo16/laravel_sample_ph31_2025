@@ -26,6 +26,7 @@ Route::get('/search', function (Request $request) {
     // $keyword = $_GET['keyword'] ?? 'No keyword';
     // dd(): デバッグ関数で強制終了する
     // dd($request->all());
-    $keyword = $request->input('keyword', 'No keyword');
+    // $keyword = $request->input('keyword', 'No keyword');
+    $keyword = $request->keyword ?? 'No keyword';
     return $keyword;
 });
