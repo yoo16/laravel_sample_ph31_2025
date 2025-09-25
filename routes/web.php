@@ -12,13 +12,15 @@ Route::get('/', function () {
 
 // /about でアクセスしたときのルーティング
 Route::get('/about', function () {
+    // resources/views/about.blade.php を表示する
     return view('about');
 });
 
 // /item/{id} でアクセスしたときのルーティング
 Route::get('/item/{id}', function (int $id) {
     $message = "Item id is {$id}";
-    return $message;
+    // resources/views/item/show.blade.php を表示する
+    return view('item.show');
 });
 
 // /search でアクセスしたときのルーティング
