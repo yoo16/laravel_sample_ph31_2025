@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 // GETリクエストで、トップページにアクセスしたときのルーティング
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
 
 // /about でアクセスしたときのルーティング
