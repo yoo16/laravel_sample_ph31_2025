@@ -35,7 +35,7 @@ Route::get('/search', function (Request $request) {
     // dd(): デバッグ関数で強制終了する
     // dd($request->all());
     // $keyword = $request->input('keyword', 'No keyword');
-    $keyword = $request->keyword ?? 'No keyword';
+    $keyword = $request->keyword ?? 'キーワードが指定されていません';
     $date = [
         'keyword' => $keyword,
         'result' => '何も見つかりませんでした',
