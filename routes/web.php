@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// Requestクラスをインポート
+use Illuminate\Http\Request;
 
 // GETリクエストで、トップページにアクセスしたときのルーティング
 Route::get('/', function () {
@@ -20,7 +22,7 @@ Route::get('/item/{id}', function (int $id) {
 });
 
 // /search でアクセスしたときのルーティング
-Route::get('/search', function () {
+Route::get('/search', function (Request $request) {
     $keyword = $_GET['keyword'] ?? 'No keyword';
     return $keyword;
 });
