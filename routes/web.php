@@ -21,6 +21,6 @@ Route::get('/item/{id}', function (int $id) {
 
 // /search でアクセスしたときのルーティング
 Route::get('/search', function () {
-    $keyword = $_GET['keyword'] ? : 'No keyword';
+    $keyword = $_GET['keyword'] ?? 'No keyword';
     return $keyword;
 });
