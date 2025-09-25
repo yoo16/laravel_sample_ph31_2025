@@ -24,6 +24,8 @@ Route::get('/item/{id}', function (int $id) {
 // /search でアクセスしたときのルーティング
 Route::get('/search', function (Request $request) {
     // $keyword = $_GET['keyword'] ?? 'No keyword';
-    dd($request->all());
+    // dd(): デバッグ関数で強制終了する
+    // dd($request->all());
+    $keyword = $request->input('keyword', 'No keyword');
     return $keyword;
 });
