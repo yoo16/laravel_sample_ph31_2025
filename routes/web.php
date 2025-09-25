@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 // /about でアクセスしたときのルーティング
 Route::get('/about', function () {
-    return '<h1>This is the about page.</h1>';
+    return view('about');
 });
 
 // /item/{id} でアクセスしたときのルーティング
