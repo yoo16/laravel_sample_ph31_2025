@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
 
 // HomeController の index を実行
 Route::get('/', [HomeController::class, 'index']);
@@ -12,6 +13,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 // HomeController の search を実行
 Route::get('/search', [HomeController::class, 'search']);
+// ItemController の show を実行: id を渡す
+Route::get('/item/{id}', [ItemController::class, 'show']);
 
 // GETリクエストで、トップページにアクセスしたときのルーティング
 // Route::get('/', function () {
@@ -25,17 +28,17 @@ Route::get('/search', [HomeController::class, 'search']);
 // });
 
 // /item/{id} でアクセスしたときのルーティング
-Route::get('/item/{id}', function (int $id) {
-    $message = "Item id is {$id}";
-    // resources/views/item/show.blade.php を表示する
-    // データ作成
-    $data = [
-        'message' => $message,
-        'id' => $id
-    ];
-    // ビューにデータを渡す
-    return view('item.show', $data);
-});
+// Route::get('/item/{id}', function (int $id) {
+//     $message = "Item id is {$id}";
+//     // resources/views/item/show.blade.php を表示する
+//     // データ作成
+//     $data = [
+//         'message' => $message,
+//         'id' => $id
+//     ];
+//     // ビューにデータを渡す
+//     return view('item.show', $data);
+// });
 
 // /search でアクセスしたときのルーティング
 // Route::get('/search', function (Request $request) {
