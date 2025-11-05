@@ -4,11 +4,16 @@ use Illuminate\Support\Facades\Route;
 // Requestクラスをインポート
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\HomeController;
+
 // GETリクエストで、トップページにアクセスしたときのルーティング
-Route::get('/', function () {
-    // resources/views/home/index.blade.php を表示する
-    return view('home.index');
-});
+// Route::get('/', function () {
+//     // resources/views/home/index.blade.php を表示する
+//     return view('home.index');
+// });
+// HomeController の index メソッドにルーティング
+Route::get('/', [HomeController::class, 'index']);
+
 
 // /about でアクセスしたときのルーティング
 Route::get('/about', function () {
