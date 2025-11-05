@@ -11,9 +11,8 @@ use App\Http\Controllers\HomeController;
 //     // resources/views/home/index.blade.php を表示する
 //     return view('home.index');
 // });
-// HomeController の index メソッドにルーティング
+// HomeController の index を実行
 Route::get('/', [HomeController::class, 'index']);
-
 
 // /about でアクセスしたときのルーティング
 Route::get('/about', function () {

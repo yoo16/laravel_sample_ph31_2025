@@ -11,7 +11,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        // resources/views/home/index.blade.php を表示する
+        return view('home.index');
     }
 
     /**
