@@ -20,12 +20,15 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
+        // TODO: キーワードからデータベースを検索
+        // 今回は仮のデータを作成
         $data = [
             'keyword' => $request->keyword,
             'result' => '何も見つかりませんでした',
         ];
         // resources/views/search.blade.php を表示する
         // $data をビューに渡す
+        // http://127.0.0.1:8000/search?keyword=hal のようにアクセス
         return view('search', $data);
     }
 
