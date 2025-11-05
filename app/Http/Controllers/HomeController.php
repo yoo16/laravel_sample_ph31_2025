@@ -18,12 +18,13 @@ class HomeController extends Controller
         return view('about');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function search(Request $request)
     {
-        //
+        $data = [
+            'keyword' => $request->keyword,
+            'result' => '何も見つかりませんでした',
+        ];
+        return view('search', $data);
     }
 
     /**

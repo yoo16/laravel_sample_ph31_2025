@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 // HomeController の index を実行
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
+Route::get('/search', [HomeController::class, 'search']);
 
 // GETリクエストで、トップページにアクセスしたときのルーティング
 // Route::get('/', function () {
@@ -35,17 +36,17 @@ Route::get('/item/{id}', function (int $id) {
 });
 
 // /search でアクセスしたときのルーティング
-Route::get('/search', function (Request $request) {
-    // $keyword = $_GET['keyword'] ?? 'No keyword';
-    // dd(): デバッグ関数で強制終了する
-    // dd($request->all());
-    // $keyword = $request->input('keyword', 'No keyword');
-    $keyword = $request->keyword ?? 'キーワードが指定されていません';
-    $date = [
-        'keyword' => $keyword,
-        'result' => '何も見つかりませんでした',
-    ];
-    // http://127.0.0.1:8000/search?keyword=xxx
-    // にアクセスすると keyword に応じたデータが表示される
-    return view('search', $date);
-});
+// Route::get('/search', function (Request $request) {
+//     // $keyword = $_GET['keyword'] ?? 'No keyword';
+//     // dd(): デバッグ関数で強制終了する
+//     // dd($request->all());
+//     // $keyword = $request->input('keyword', 'No keyword');
+//     $keyword = $request->keyword ?? 'キーワードが指定されていません';
+//     $date = [
+//         'keyword' => $keyword,
+//         'result' => '何も見つかりませんでした',
+//     ];
+//     // http://127.0.0.1:8000/search?keyword=xxx
+//     // にアクセスすると keyword に応じたデータが表示される
+//     return view('search', $date);
+// });
