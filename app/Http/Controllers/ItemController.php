@@ -30,12 +30,19 @@ class ItemController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // $id を数字限定の時は、int
+    // $id を文字にするときは、string
+    public function show(int $id)
     {
-        //
+        $message = "Item id is {$id}";
+        $data = [
+            'message' => $message,
+            'id' => $id
+        ];
+
+        // http://127.0.0.1:8000/item/xxxx のようにアクセス
+        // ビューにデータを渡す
+        return view('item.show', $data);
     }
 
     /**
