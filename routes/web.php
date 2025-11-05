@@ -6,19 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\HomeController;
 
+// HomeController の index を実行
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [HomeController::class, 'about']);
+
 // GETリクエストで、トップページにアクセスしたときのルーティング
 // Route::get('/', function () {
 //     // resources/views/home/index.blade.php を表示する
 //     return view('home.index');
 // });
-// HomeController の index を実行
-Route::get('/', [HomeController::class, 'index']);
-
 // /about でアクセスしたときのルーティング
-Route::get('/about', function () {
-    // resources/views/about.blade.php を表示する
-    return view('about');
-});
+// Route::get('/about', function () {
+//     // resources/views/about.blade.php を表示する
+//     return view('about');
+// });
 
 // /item/{id} でアクセスしたときのルーティング
 Route::get('/item/{id}', function (int $id) {

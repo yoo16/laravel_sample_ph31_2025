@@ -6,21 +6,16 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         // resources/views/home/index.blade.php を表示する
         return view('home.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function about()
     {
-        //
+        // resources/views/about.blade.php を表示する
+        return view('about');
     }
 
     /**
