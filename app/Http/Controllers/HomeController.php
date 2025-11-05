@@ -24,6 +24,8 @@ class HomeController extends Controller
             'keyword' => $request->keyword,
             'result' => '何も見つかりませんでした',
         ];
+        // resources/views/search.blade.php を表示する
+        // $data をビューに渡す
         return view('search', $data);
     }
 

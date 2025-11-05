@@ -8,7 +8,9 @@ use App\Http\Controllers\HomeController;
 
 // HomeController の index を実行
 Route::get('/', [HomeController::class, 'index']);
+// HomeController の about を実行
 Route::get('/about', [HomeController::class, 'about']);
+// HomeController の search を実行
 Route::get('/search', [HomeController::class, 'search']);
 
 // GETリクエストで、トップページにアクセスしたときのルーティング
