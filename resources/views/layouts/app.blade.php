@@ -6,6 +6,7 @@
 
 <body class="min-h-screen">
     <!-- TODO: ヘッダナビゲーション(include): componens/nav.blade.php -->
+    @include('components.nav')
 
     <!-- TODO: メインコンテンツ(yield): content -->
     @yield('content')
