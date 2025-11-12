@@ -17,7 +17,9 @@
             <!-- TODO: フィルターボタンと検索フォーム: components/product-nav.blade.php -->
 
             <div id="product-list" class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                ここに商品カードのリストが表示
+                @include('components.item-card')
+                @include('components.item-card')
+                @include('components.item-card')
             </div>
         </section>
     </main>
