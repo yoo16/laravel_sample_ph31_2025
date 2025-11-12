@@ -1,3 +1,8 @@
-<h1>My Page</h1>
+{{-- resouces/views/layouts/app.blade.php をレイアウトとする --}}
+@extends('layouts.app')
 
-<a href="/about">About</a>
+@section('content')
+    <h1>My Page</h1>
+
+    <a href="/about">About</a>
+@endsection
