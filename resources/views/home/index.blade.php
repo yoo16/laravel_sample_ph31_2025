@@ -15,6 +15,7 @@
 
         <section id="product-section" class="my-4">
             <!-- TODO: フィルターボタンと検索フォーム: components/product-nav.blade.php -->
+            @include('components.product-nav', ['keyword' => $keyword ?? ''])
 
             <div id="product-list" class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 @include('components.item-card')
