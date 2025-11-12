@@ -1,6 +1,8 @@
 <!-- TODO: レイアウト指定(extends): layouts/app.blade.php -->
+@extends('layouts.app')
 
 <!-- TODO: メインコンテンツ(section): content -->
+@section('content')
     <section class="bg-gradient-to-br from-pink-50 via-white to-blue-50 py-24 px-10 text-center">
         <h2 class="text-4xl md:text-5xl font-light tracking-wide text-gray-800 mb-6">
             A Gentle Start for Every Day
@@ -76,3 +78,4 @@
             </p>
         </div>
     </section>
+@endsection
