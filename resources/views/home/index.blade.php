@@ -20,6 +20,7 @@
                 @include('components.item-card')
                 @include('components.item-card')
                 @include('components.item-card')
+                @include('components.item-card')
             </div>
         </section>
     </main>
