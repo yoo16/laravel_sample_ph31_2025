@@ -51,6 +51,7 @@ class ItemController extends Controller
     public function edit(string $id)
     {
         //
+        return view('item.edit');
     }
 
     /**
