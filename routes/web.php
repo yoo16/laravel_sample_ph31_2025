@@ -19,3 +19,6 @@ Route::get('/item/edit/{id}', [ItemController::class, 'edit'])
 // ルート名：item.index
 Route::get('/item/', [ItemController::class, 'index'])
     ->name('item.index');
+// ルート名：item.index
+Route::get('/item/create', [ItemController::class, 'create'])
+    ->name('item.create');
