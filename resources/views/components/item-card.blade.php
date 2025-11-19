@@ -1,7 +1,7 @@
 <div
     class="product bg-white rounded-xl shadow cursor-pointer
                         hover:shadow-lg transition transform hover:-translate-y-1 ${cardClass}">
-    <a href="/item/show/1">
+    <a href="{{ route('item.show', 1) }}">
         <img src="/images/Oxford-Shirt.png" class="rounded-t-md">
         <div class="info p-3">
             <h3 class="name font-semibold text-lg">Oxfort Shirt</h3>
