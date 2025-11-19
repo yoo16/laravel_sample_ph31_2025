@@ -5,6 +5,7 @@
     <nav class="flex space-x-6">
         <a href="/" class="text-gray-600 hover:text-gray-700">Home</a>
         <a href="/about" class="text-gray-600 hover:text-gray-700">About</a>
+        <a href="/item" class="text-gray-600 hover:text-gray-700">Item</a>
         <a href="/cart" class="text-gray-600 hover:text-gray-700">Cart</a>
     </nav>
 </header>
