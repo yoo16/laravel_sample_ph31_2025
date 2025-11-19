@@ -16,6 +16,7 @@ class ItemController extends Controller
     {
         // JSON データを取得して表示
         $items = $this->fetchAll();
+        // デバッグで強制終了
         dd($items);
 
         // TODO: 商品一覧をDBから取得
