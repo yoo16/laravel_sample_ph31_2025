@@ -22,3 +22,9 @@ Route::get('/item/', [ItemController::class, 'index'])
 // ルート名：item.index
 Route::get('/item/create', [ItemController::class, 'create'])
     ->name('item.create');
+// POSTリクエストで商品の更新（UPDATE）: Route で POST にする
+Route::post('/item/update/{id}', [ItemController::class, 'update'])
+    ->name('item.update');
+// POSTリクエストで商品の更新（DELETE）: Route で POST にする
+Route::post('/item/destroy/{id}', [ItemController::class, 'destroy'])
+    ->name('item.destroy');
