@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // 商品一覧を表示（管理者用）
     public function index()
     {
-        //
+        // TODO: 商品一覧をDBから取得
+        // TODO: ビューを表示
+        return view('item.index');
     }
 
     /**
