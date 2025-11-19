@@ -11,20 +11,14 @@ Route::get('/search', [HomeController::class, 'search']);
 
 // ItemControllerのshowメソッドを呼び出すルートを定義
 // ルート名：item.show
-Route::get('/item/show/{id}', [ItemController::class, 'show'])
-    ->name('item.show');
+Route::get('/item/show/{id}', [ItemController::class, 'show'])->name('item.show');
 // ルート名：item.edit
-Route::get('/item/edit/{id}', [ItemController::class, 'edit'])
-    ->name('item.edit');
+Route::get('/item/edit/{id}', [ItemController::class, 'edit'])->name('item.edit');
 // ルート名：item.index
-Route::get('/item/', [ItemController::class, 'index'])
-    ->name('item.index');
+Route::get('/item/', [ItemController::class, 'index'])->name('item.index');
 // ルート名：item.index
-Route::get('/item/create', [ItemController::class, 'create'])
-    ->name('item.create');
+Route::get('/item/create', [ItemController::class, 'create'])->name('item.create');
 // POSTリクエストで商品の更新（UPDATE）: Route で POST にする
-Route::post('/item/update/{id}', [ItemController::class, 'update'])
-    ->name('item.update');
+Route::post('/item/update/{id}', [ItemController::class, 'update'])->name('item.update');
 // POSTリクエストで商品の更新（DELETE）: Route で POST にする
-Route::post('/item/destroy/{id}', [ItemController::class, 'destroy'])
-    ->name('item.destroy');
+Route::post('/item/destroy/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
