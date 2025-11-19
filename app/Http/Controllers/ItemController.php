@@ -3,12 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// ItemTestTrait を使う宣言を追加
+use App\Models\Traits\ItemTestTrait;
 
 class ItemController extends Controller
 {
+    // ItemTestTrait を使う宣言を追加
+    use ItemTestTrait;
+
     // 商品一覧を表示（管理者用）
     public function index()
     {
+        // JSON データを取得して表示
+        $items = $this->fetchAll();
+        dd($items);
+
         // TODO: 商品一覧をDBから取得
         // TODO: ビューを表示
         return view('item.index');
