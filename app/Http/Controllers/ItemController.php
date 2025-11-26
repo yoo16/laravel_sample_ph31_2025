@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // ItemTestTrait を使う宣言を追加
 use App\Models\Traits\ItemTestTrait;
+use App\Models\Category;
 
 class ItemController extends Controller
 {
@@ -32,7 +33,10 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        // categories テーブルからすべてのデータを取得
+        // SELECT * FROM categories;
+        $categories = Category::get();
+
         return view('item.create');
     }
 
