@@ -19,7 +19,9 @@ class ItemController extends Controller
     public function index()
     {
         // JSON データを取得して表示
-        $items = $this->fetchAll();
+        // $items = $this->fetchAll();
+        $items = Item::get();
+
         // デバッグで強制終了
         // dd($items);
 
