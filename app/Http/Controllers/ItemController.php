@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Traits\ItemTestTrait;
 // Category モデルを使う宣言を追加
 use App\Models\Category;
+// Item モデルを使う宣言を追加
+use App\Models\Item;
 
 class ItemController extends Controller
 {
@@ -54,7 +56,11 @@ class ItemController extends Controller
         // フォームから送信されたデータを取得
         $posts = $request->all();
         // デバッグ表示
-        dd($posts);
+        // dd($posts);
+        Item::create($posts);
+
+        // リダイレクト
+        return redirect('/item/');
     }
 
     // $id を数字限定の時は、int
