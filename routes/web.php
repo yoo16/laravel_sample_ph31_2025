@@ -22,3 +22,5 @@ Route::get('/item/create', [ItemController::class, 'create'])->name('item.create
 Route::post('/item/update/{id}', [ItemController::class, 'update'])->name('item.update');
 // POSTリクエストで商品の更新（DELETE）: Route で POST にする
 Route::post('/item/destroy/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
+// POSTリクエストで商品の追加（INSERT）: Route で POST にする
+Route::post('/item/sotre', [ItemController::class, 'store'])->name('item.store');

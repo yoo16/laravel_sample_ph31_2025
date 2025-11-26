@@ -51,7 +51,10 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // フォームから送信されたデータを取得
+        $posts = $request->all();
+        // デバッグ表示
+        dd($posts);
     }
 
     // $id を数字限定の時は、int
