@@ -37,9 +37,13 @@ class ItemController extends Controller
         // categories テーブルからすべてのデータを取得
         // SELECT * FROM categories;
         $categories = Category::get();
-        dd($categories);
+        // dd($categories);
+        // Viewに渡すデータを作成
+        $data = [
+            'categories' => $categories
+        ];
 
-        return view('item.create');
+        return view('item.create', $data);
     }
 
     /**
