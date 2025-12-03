@@ -124,6 +124,10 @@ class ItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // 指定IDの商品を削除
+        // SQL: DELETE FROM items WHERE id = $id;
+        Item::find($id)->delete();
+        // リダイレクト: 商品一覧へ
+        return redirect('/item/');
     }
 }
