@@ -13,9 +13,12 @@ class HomeController extends Controller
         // $items = Item::lastest()->take(3)->get();
         $items = Item::orderBy('created_at', 'desc')->limit(3)->get();
         // SELECT * FROM items ORDER BY created_at DESC LIMIT 3;
-
+        // dd($items);
+        $data = [
+            'items' => $items
+        ];
         // resources/views/home/index.blade.php を表示する
-        return view('home.index');
+        return view('home.index', $data);
     }
 
     public function about()
