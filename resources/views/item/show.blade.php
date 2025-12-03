@@ -11,7 +11,7 @@
             <div class="w-1/2 pl-6 flex flex-col justify-between">
                 <div>
                     <div class="info p-3 space-y-3">
-                        <h3 class="name font-semibold text-2xl">Oxford Shirt</h3>
+                        <h3 class="name font-semibold text-2xl">{{ $item->name }}</h3>
                         <p class="note text-gray-500">Oxford Shirt</p>
                         <p class="price font-bold text-2xl">&yen;4,500</p>
                     </div>
