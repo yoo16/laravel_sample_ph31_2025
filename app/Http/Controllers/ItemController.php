@@ -72,14 +72,19 @@ class ItemController extends Controller
     // $id を文字にするときは、string
     public function show(int $id)
     {
+        // IDで商品を検索
+        $item = Item::find($id);
+        // dd($item);
+
         $message = "Item id is {$id}";
+        // 商品を data 配列に追加
         $data = [
+            'item' => $item,
             'message' => $message,
-            'id' => $id
+            'id' => $id,
         ];
 
-        // http://127.0.0.1:8000/item/xxxx のようにアクセス
-        // ビューにデータを渡す
+        // ビューにデータを渡す: item/show.blade.php
         return view('item.show', $data);
     }
 
