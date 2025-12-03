@@ -22,6 +22,7 @@ class ItemController extends Controller
         // $items = $this->fetchAll();
         // items からすべてのデータを取得
         $items = Item::get();
+        // SELECT * FROM items;
 
         // デバッグで強制終了
         // dd($items);
@@ -61,8 +62,9 @@ class ItemController extends Controller
         // デバッグ表示
         // dd($posts);
         Item::create($posts);
+        // INSERT INTO items (...) VALUES (...);
 
-        // リダイレクト
+        // リダイレクト: 商品一覧へ
         return redirect('/item/');
     }
 
@@ -88,7 +90,9 @@ class ItemController extends Controller
     {
         // TODO: DBから指定IDの商品を取得
         // 指定したIDの商品を取得
-        $item = $this->findById($id);
+        // $item = $this->findById($id);
+        $item = Item::find($id);
+        // SELECT * FROM items WHERE id = $id;
         // データ作成
         $data = [
             'item' => $item
