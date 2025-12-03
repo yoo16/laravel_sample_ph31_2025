@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+// Item モデルを使う宣言を追加
+use App\Models\Item;
 class HomeController extends Controller
 {
     public function index()
     {
+        // items から 最新の３件を取得して $items に代入する処理など
+        // $items = Item::lastest()->take(3)->get();
+        $items = Item::orderBy('created_at', 'desc')->limit(3)->get();
+        // SELECT * FROM items ORDER BY created_at DESC LIMIT 3;
+
         // resources/views/home/index.blade.php を表示する
         return view('home.index');
     }
