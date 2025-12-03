@@ -112,6 +112,10 @@ class ItemController extends Controller
         // $_POST をセキュアにしたもの
         // DBに更新
         // SQL: UPDATE items SET ... WHERE id = $id;
+        Item::where('id', $id)->update($posts);
+
+        // リダイレクト: 商品一覧へ
+        return redirect('/item/');
     }
 
     /**
