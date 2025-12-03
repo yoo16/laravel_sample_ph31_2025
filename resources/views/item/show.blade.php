@@ -12,8 +12,8 @@
                 <div>
                     <div class="info p-3 space-y-3">
                         <h3 class="name font-semibold text-2xl">{{ $item->name }}</h3>
-                        <p class="note text-gray-500">Oxford Shirt</p>
-                        <p class="price font-bold text-2xl">&yen;4,500</p>
+                        <p class="note text-gray-500">{{ $item->note }}</p>
+                        <p class="price font-bold text-2xl">&yen;{{ $item->price }}</p>
                     </div>
                 </div>
                 <div class="text-center border-t">
