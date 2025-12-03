@@ -20,7 +20,7 @@
             <div id="product-list" class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {{-- items から取得した商品を繰り返し表示 --}}
                 @foreach ($items as $item)
-                    @include('components.item-card')
+                    @include('components.item-card', ['item' => $item])
                 @endforeach
             </div>
         </section>
