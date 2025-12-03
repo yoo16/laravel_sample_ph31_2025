@@ -18,10 +18,10 @@
             @include('components.product-nav', ['keyword' => $keyword ?? ''])
 
             <div id="product-list" class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                @include('components.item-card')
-                @include('components.item-card')
-                @include('components.item-card')
-                @include('components.item-card')
+                {{-- items から取得した商品を繰り返し表示 --}}
+                @foreach ($items as $item)
+                    @include('components.item-card')
+                @endforeach
             </div>
         </section>
     </main>
