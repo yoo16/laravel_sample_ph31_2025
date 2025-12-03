@@ -106,7 +106,12 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //商品の更新処理
+        // フォームから送信されたデータを取得
+        $posts = $request->all();
+        // $_POST をセキュアにしたもの
+        // DBに更新
+        // SQL: UPDATE items SET ... WHERE id = $id;
     }
 
     /**
