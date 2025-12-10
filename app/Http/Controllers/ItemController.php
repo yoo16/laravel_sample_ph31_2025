@@ -109,6 +109,9 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
+        // カテゴリ一覧を取得：プルダウン用
+        $categories = Category::get();
+
         // TODO: DBから指定IDの商品を取得
         // 指定したIDの商品を取得
         // $item = $this->findById($id);
@@ -116,6 +119,7 @@ class ItemController extends Controller
         // SELECT * FROM items WHERE id = $id;
         // データ作成
         $data = [
+            'categories' => $categories,
             'item' => $item
         ];
         // ビューにデータを渡す
