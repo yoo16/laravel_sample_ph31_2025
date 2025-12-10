@@ -4,16 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // ItemTestTrait を使う宣言を追加
-use App\Models\Traits\ItemTestTrait;
+// use App\Models\Traits\ItemTestTrait;
 // Category モデルを使う宣言を追加
 use App\Models\Category;
 // Item モデルを使う宣言を追加
 use App\Models\Item;
+// ImageService クラスを使う宣言を追加
+use App\Services\ImageService;
 
 class ItemController extends Controller
 {
     // ItemTestTrait を使う宣言を追加
-    use ItemTestTrait;
+    // use ItemTestTrait;
+
+    protected $imageService;
+    public function __construct(ImageService $imageService) {
+        $this->imageService = $imageService;
+    }
 
     // 商品一覧を表示（管理者用）
     public function index()
@@ -115,6 +122,10 @@ class ItemController extends Controller
         // フォームから送信されたデータを取得
         $posts = $request->all();
         // $_POST をセキュアにしたもの
+
+        // 画像アップロード処理
+
+
         // DBに更新
         // SQL: UPDATE items SET ... WHERE id = $id;
         // Item::where('id', $id)->update($posts);
