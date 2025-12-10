@@ -31,6 +31,7 @@
                 class="w-full border border-gray-300 rounded-md p-2">{{ $item->note ?? old('note') }}</textarea>
         </div>
 
+        {{-- 画像アップロード --}}
         <div>
             <input type="file" name="image">
         </div>
