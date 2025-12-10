@@ -14,7 +14,10 @@
                 <select name="category_id" class="w-full border border-gray-300 rounded-md p-2">
                     {{-- 繰り返し カテゴリ名を表示 --}}
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option value="{{ $category->id }}"
+                            {{ $item->category_id === $category->id ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
                     @endforeach
                 </select>
             </div>
