@@ -124,7 +124,11 @@ class ItemController extends Controller
         // $_POST をセキュアにしたもの
 
         // 画像アップロード処理
-
+        $imagePath = $this->imageService->uploadImage($request);
+        if ($imagePath) {
+            // 画像がアップロードされた場合、パスを $posts に追加
+            $posts['image'] = $imagePath;
+        }
 
         // DBに更新
         // SQL: UPDATE items SET ... WHERE id = $id;
