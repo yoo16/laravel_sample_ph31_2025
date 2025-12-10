@@ -7,6 +7,7 @@
     <form 
         enctype="multipart/form-data"
         action="{{ route('item.update', $item->id) }}" method="post" class="space-y-6">
+        {{-- Laravel の CSRF 保護のための記述 --}}
         @csrf
 
         <!-- 商品名 -->
@@ -28,6 +29,10 @@
             <label class="block text-sm font-medium text-gray-700 mb-1">Note</label>
             <textarea name="note" rows="4"
                 class="w-full border border-gray-300 rounded-md p-2">{{ $item->note ?? old('note') }}</textarea>
+        </div>
+
+        <div>
+            <input type="file" name="image">
         </div>
 
         <!-- ボタン -->
