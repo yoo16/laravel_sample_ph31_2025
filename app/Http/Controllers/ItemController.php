@@ -18,7 +18,8 @@ class ItemController extends Controller
     // use ItemTestTrait;
     // ImageService クラスを使うための準備
     protected $imageService;
-    public function __construct(ImageService $imageService) {
+    public function __construct(ImageService $imageService)
+    {
         $this->imageService = $imageService;
     }
 
@@ -68,6 +69,14 @@ class ItemController extends Controller
         $posts = $request->all();
         // デバッグ表示
         // dd($posts);
+
+        // 画像アップロード処理
+        $imagePath = $this->imageService->uploadImage($request);
+        if ($imagePath) {
+            // 画像がアップロードされた場合、パスを $posts に追加
+            $posts['image'] = $imagePath;
+        }
+
         Item::create($posts);
         // INSERT INTO items (...) VALUES (...);
 
