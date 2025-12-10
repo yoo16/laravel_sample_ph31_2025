@@ -16,6 +16,14 @@ class HomeController extends Controller
                     ->limit(3)
                     ->get();
         // SELECT * FROM items ORDER BY created_at DESC LIMIT 3;
+        // SELECT * FROM categories;
+
+        // SELECT * FROM items JOIN categories ON items.category_id = categories.id ORDER BY items.created_at DESC LIMIT 3;
+        // Item::join('categories', 'items.category_id', '=', 'categories.id')
+        //     ->orderBy('items.created_at', 'desc')
+        //     ->limit(3)
+        //     ->get();
+
         // dd($items);
         $data = [
             'items' => $items
