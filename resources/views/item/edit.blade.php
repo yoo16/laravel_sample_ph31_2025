@@ -3,7 +3,10 @@
 @section('content')
 <main class="container mx-auto px-4">
     <h2 class="font-bold text-2xl text-center p-2">商品編集</h2>
-    <form action="{{ route('item.update', $item->id) }}" method="post" class="space-y-6">
+    {{-- enctype="multipart/form-data" がないとファイルアップロードできない --}}
+    <form 
+        enctype="multipart/form-data"
+        action="{{ route('item.update', $item->id) }}" method="post" class="space-y-6">
         @csrf
 
         <!-- 商品名 -->
