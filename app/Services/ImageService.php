@@ -28,6 +28,7 @@ class ImageService
 
         // TODO: ファイルを移動: move(移動先, ファイル名)
         // 移動先: public/images : public_path('images')
+        $image->move(public_path('images'), $image_name);
 
         // データベースに保存する相対パスを返す
         return "/images/{$image_name}";
