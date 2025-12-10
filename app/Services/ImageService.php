@@ -15,15 +15,16 @@ class ImageService
         }
 
         // TODO: input タグの name からファイルを取得: file()
+        $image = $request->file($inputName);
 
         // UUID作成
         $uuid = Str::uuid();
 
         // TODO: 拡張子取得: getClientOriginalExtension()
-        $ext = "";
+        $ext = $image->getClientOriginalExtension();
 
         // TODO: UUIDからファイル名を生成: 拡張子: $image->getClientOriginalExtension()
-        $image_name = "";
+        $image_name = "{$uuid}.{$ext}";
 
         // TODO: ファイルを移動: move(移動先, ファイル名)
         // 移動先: public/images : public_path('images')
