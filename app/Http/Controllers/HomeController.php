@@ -11,7 +11,10 @@ class HomeController extends Controller
     {
         // items から 最新の３件を取得して $items に代入する処理など
         // $items = Item::lastest()->take(3)->get();
-        $items = Item::orderBy('created_at', 'desc')->limit(3)->get();
+        $items = Item::with('category')
+                    ->orderBy('created_at', 'desc')
+                    ->limit(3)
+                    ->get();
         // SELECT * FROM items ORDER BY created_at DESC LIMIT 3;
         // dd($items);
         $data = [
