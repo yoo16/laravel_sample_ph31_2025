@@ -16,7 +16,7 @@ class ItemController extends Controller
 {
     // ItemTestTrait を使う宣言を追加
     // use ItemTestTrait;
-
+    // ImageService クラスを使うための準備
     protected $imageService;
     public function __construct(ImageService $imageService) {
         $this->imageService = $imageService;
