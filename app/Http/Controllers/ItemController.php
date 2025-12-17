@@ -10,6 +10,8 @@ use App\Models\Category;
 use App\Models\Item;
 // ImageService クラスを使う宣言を追加
 use App\Services\ImageService;
+// ItemRequest クラスを使う宣言を追加
+use App\Http\Requests\ItemRequest;
 
 class ItemController extends Controller
 {
@@ -62,7 +64,7 @@ class ItemController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ItemRequest $request)
     {
         // フォームから送信されたデータを取得
         $posts = $request->all();
