@@ -3,6 +3,7 @@
 @section('content')
     <main class="container mx-auto px-4">
         <h2 class="font-bold text-2xl text-center p-2">商品編集</h2>
+        @include('components.error-message')
         {{-- enctype="multipart/form-data" がないとファイルアップロードできない --}}
         <form enctype="multipart/form-data" action="{{ route('item.update', $item->id) }}" method="post" class="space-y-6">
             {{-- Laravel の CSRF 保護のための記述 --}}
@@ -14,8 +15,7 @@
                 <select name="category_id" class="w-full border border-gray-300 rounded-md p-2">
                     {{-- 繰り返し カテゴリ名を表示 --}}
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}"
-                            {{ $item->category_id === $category->id ? 'selected' : '' }}>
+                        <option value="{{ $category->id }}" {{ $item->category_id === $category->id ? 'selected' : '' }}>
                             {{ $category->name }}
                         </option>
                     @endforeach
