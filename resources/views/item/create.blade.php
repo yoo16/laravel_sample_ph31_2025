@@ -2,6 +2,8 @@
 
 @section('content')
 <main class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow">
+    @include('components.error-message')
+
     <form action="/item/store" method="post" class="space-y-6" enctype="multipart/form-data">
         @csrf
         <!-- カテゴリ -->
