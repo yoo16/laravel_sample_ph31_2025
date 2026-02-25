@@ -13,13 +13,14 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . .
 
-# ライブラリのインストール
+# 1. ライブラリのインストール (ビルド時に実行)
 RUN composer install --no-dev --optimize-autoloader
 
-# 実行権限の付与
+# 2. 実行権限の付与
 RUN chmod -R 777 storage bootstrap/cache
 
-# ポートを指定して起動（Renderの$PORT環境変数に対応）
-CMD php artisan serve --host 0.0.0.0 --port $PORT
+# 3. 最適化 (ビルド時に実行)
+RUN php artisan optimize
 
-composer install --no-dev --optimize-autoloader && php artisan migrate --force && php artisan optimize
+# 4. 起動時にマイグレーションを実行してからサーバーを立てる
+CMD php artisan migrate --force && php artisan serve --host 0.0.0.0 --port $PORT
