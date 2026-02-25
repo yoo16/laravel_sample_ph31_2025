@@ -1,5 +1,5 @@
-# PHP 8.2 の環境を使用
-FROM php:8.2-cli
+# PHP 8.4 の環境を使用
+FROM php:8.4-cli
 
 # 必要なパッケージとPostgreSQL用の拡張をインストール
 RUN apt-get update && apt-get install -y \
