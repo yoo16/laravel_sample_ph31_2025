@@ -23,4 +23,6 @@ RUN chmod -R 777 storage bootstrap/cache
 RUN php artisan optimize
 
 # 4. 起動時にマイグレーションを実行してからサーバーを立てる
-CMD php artisan migrate --force && php artisan serve --host 0.0.0.0 --port $PORT
+CMD php artisan config:clear && \
+    php artisan migrate --force && \
+    php artisan serve --host 0.0.0.0 --port $PORT
