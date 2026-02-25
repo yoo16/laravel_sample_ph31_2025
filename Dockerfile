@@ -21,3 +21,5 @@ RUN chmod -R 777 storage bootstrap/cache
 
 # ポートを指定して起動（Renderの$PORT環境変数に対応）
 CMD php artisan serve --host 0.0.0.0 --port $PORT
+
+composer install --no-dev --optimize-autoloader && php artisan migrate --force && php artisan optimize
